@@ -1,12 +1,12 @@
-# Contoso CareScape 
+# MySite
 
-## Chatbot Demo
+## Docker Demo
 
-For details about using this service, see [chatbot.md](chatbot.md).
+
 
 ## Building and Publishing
 
-**Note:** if you build your own chatbot update index.html with your chatbot URL.
+**Note:** if you build your own site update index.html with your site content.
 
 
 ```
