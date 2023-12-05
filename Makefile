@@ -13,7 +13,7 @@ export PORT ?= 8080
 
 
 # These variables can be overridden from the environment
-export SITE_NAME ?= Demo
+export SITE_NAME ?= demo
 export SITE_VERSION ?= 1.0.0
 
 
