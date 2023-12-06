@@ -55,7 +55,7 @@ docker-push: build
 clean:
 	-docker rm -f $(DOCKER_NAME) 2> /dev/null || :
 	#-docker rmi $(DOCKER_HUB_ID)/$(DOCKER_NAME):$(SITE_VERSION) 2> /dev/null || :
-	-docker rmi $(DOCKER_HUB_ID)/$(DOCKER_NAME):$(SITE_VERSION) 2> /dev/null || :
-	@echo "-docker rmi $(DOCKER_HUB_ID)/$(DOCKER_NAME):$(SITE_VERSION) 2> /dev/null || :"
+	-docker rmi $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) 2> /dev/null || :
+	@echo "-docker rmi $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) 2> /dev/null || :"
 
 .PHONY: default all build run  stop check clean
