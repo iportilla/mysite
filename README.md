@@ -54,7 +54,7 @@ Enjoy this topic!
 	
 5. Change directory to the Docker directory
 
-	`cd 5720-Docker/`
+	`cd mysite/`
 6. Test your `docker` installation by running the following command:
 
 	`docker run hello-world`
