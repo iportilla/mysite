@@ -27,8 +27,8 @@ default: all
 all: build run
 
 build:
-	@echo "docker build -t $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) -f ./Dockerfile.$(ARCH) .
-ifeq (,$(findstring amd64,$(ARCH))) "
+	@echo "docker build -t $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) -f ./Dockerfile.$(ARCH) ."
+ifeq (,$(findstring amd64,$(ARCH)))
 	rm -f tmp/$(ARCH)/*.rsa.pub
 endif
 
