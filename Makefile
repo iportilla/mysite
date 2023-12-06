@@ -41,11 +41,11 @@ run:
 
 
 check:
-	docker logs -f $(DOCKER_NAME)
+	docker logs -f $(SITE_NAME)
 
 stop:
-	-docker rm -f $(DOCKER_NAME) 2> /dev/null || :
-	@echo "-docker rm -f $(DOCKER_NAME) 2> /dev/null || :"
+	-docker rm -f $(SITE_NAME) 2> /dev/null || :
+	@echo "-docker rm -f $(SITE_NAME) 2> /dev/null || :"
 
 # Push the docker image to the registry. You must have write access to the docker hub openhorizon user
 docker-push: build
