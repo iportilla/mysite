@@ -50,7 +50,7 @@ Enjoy this topic!
 	
 4. Clone Docker repository from github
 
-	`git clone https://github.com/iportilla/5720-Docker.git`
+	`git clone [https://github.com/iportilla/mysite.git](https://github.com/iportilla/mysite.git)
 	
 5. Change directory to the Docker directory
 
