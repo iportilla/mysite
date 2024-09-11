@@ -89,7 +89,7 @@ Enjoy this topic!
 
 8. Great! Let's now run a Docker container based on this image. Run the following command:
 
- `docker run busybox echo "Hello World from busybox`
+ `docker run busybox echo "Hello World from busybox"`
 
 9. Let's run a terminal in the busybox container with:
 
