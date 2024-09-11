@@ -34,7 +34,7 @@ Enjoy this topic!
     
 2. Navigate to class subdirectory
 
-	`cd /home/ubuntu/5720`
+	`cd /home/ubuntu/5350/`
 3. Create & navigate to your own directory
 
 	`mkdir userName`
