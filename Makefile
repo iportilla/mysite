@@ -27,16 +27,13 @@ default: all
 all: build run
 
 build:
-	@echo "docker build -t $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) -f ./Dockerfile.$(ARCH) ."
-ifeq (,$(findstring amd64,$(ARCH)))
-	rm -f tmp/$(ARCH)/*.rsa.pub
-endif
+	#@echo "docker build -t $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) -f ./Dockerfile.$(ARCH) ."
+	docker build -t $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) -f ./Dockerfile.$(ARCH) .
 
 
 run:
-	-docker rm -f $(SITE_NAME) 2> /dev/null || :
-	#docker run -d --name $(SITE_NAME) -p $(PORT):9080 --volume `pwd`:/outside $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION)
-	@echo "docker run -d --name $(SITE_NAME) -p $(PORT):9080 --volume `pwd`:/outside $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION)"
+	docker rm -f $(SITE_NAME) 2> /dev/null || :
+	docker run -d --name $(SITE_NAME) -p $(PORT):9080 --volume `pwd`:/outside $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION)
 	@echo "Open your browser and go to http://localhost:"$(PORT)
 
 
@@ -44,8 +41,7 @@ check:
 	docker logs -f $(SITE_NAME)
 
 stop:
-	#-docker rm -f $(SITE_NAME) 2> /dev/null || :
-	@echo "-docker rm -f $(SITE_NAME) 2> /dev/null || :"
+	docker rm -f $(SITE_NAME) 2> /dev/null || :
 
 # Push the docker image to the registry. You must have write access to the docker hub openhorizon user
 docker-push: build
@@ -54,8 +50,6 @@ docker-push: build
 
 clean:
 	-docker rm -f $(DOCKER_NAME) 2> /dev/null || :
-	#-docker rmi $(DOCKER_HUB_ID)/$(DOCKER_NAME):$(SITE_VERSION) 2> /dev/null || :
-	-docker rmi $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) 2> /dev/null || :
 	@echo "-docker rmi $(DOCKER_HUB_ID)/$(SITE_NAME):$(SITE_VERSION) 2> /dev/null || :"
 
 .PHONY: default all build run  stop check clean
